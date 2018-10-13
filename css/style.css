@@ -1,0 +1,972 @@
+@charset "UTF-8";
+/*
+	Theme Name: Abony
+	Author: Th0r
+	Author URI: http://webm.pro
+	Description: Theme for sliding pages ural-helyx.ru
+	License: MIT
+*/
+/*
+
+	Some Variables for edit
+
+*/
+/* Fonts */
+@font-face {
+  font-family: 'PF Din Comp';
+  src: url("../font/pfdintextcomppro-thin.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PF Din Comp';
+  src: url("../font/pfdintextcomppro-light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PF Din Comp';
+  src: url("../font/pfdintextcomppro-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PF Din Comp';
+  src: url("../font/pfdintextcomppro-italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'PF Din Comp';
+  src: url("../font/pfdintextcomppro-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PF Din Comp';
+  src: url("../font/pfdintextcomppro-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PF Din Comp';
+  src: url("../font/pfdintextcomppro-xblack.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Common styles */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: #282828;
+}
+
+.clearfix:after {
+  display: block;
+  content: " ";
+  clear: both;
+}
+
+.spacer {
+  min-height: 100px;
+}
+
+/* For test purpose */
+.hidden {
+  display: none !important;
+}
+
+/* Homepage styles */
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  /* Homepage, cropped background*/
+  /* Home page, right side: logo and menu*/
+}
+
+.main-container .main-intro {
+  background: url(../img/background.png) no-repeat center center/cover;
+  background-position: 80%;
+  height: 100vh;
+  width: 45%;
+  float: left;
+}
+
+.main-container .main-right-block {
+  width: calc(100% - 45%);
+  height: 100%;
+  background: #ffffff;
+  padding-left: 8%;
+  float: left;
+}
+
+.main-container .main-right-block .main-logo {
+  background: url(../img/logo.svg) no-repeat center center/cover;
+  margin-top: 20%;
+  width: 226px;
+  height: 193px;
+  margin-bottom: 18%;
+}
+
+.main-container .main-right-block .main-menu {
+  color: #282828;
+  font-family: "PF Din Comp";
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.main-container .main-right-block .main-menu ul {
+  list-style: none;
+  margin: 0px;
+}
+
+/* Styles for all pages */
+.page-logo {
+  height: 116px;
+  width: 136px;
+}
+
+.page-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  position: relative;
+  padding-left: 17%;
+  padding-top: 7%;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Styles for contacts */
+.contacts .page-logo {
+  margin-bottom: 6.6%;
+}
+
+.contacts .contact-container {
+  width: 66%;
+}
+
+.contacts .contact-container .contact-text {
+  white-space: normal;
+  width: 45%;
+  float: left;
+  padding-right: 10%;
+  color: #282828;
+  font-family: "PF Din Comp";
+  font-size: 2.8em;
+  font-weight: 400;
+}
+
+.contacts .contact-container .contact-text span {
+  color: #59a726;
+  font-family: "PF Din Comp";
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.contacts .contact-container .contact-form-block {
+  width: 50%;
+  float: left;
+}
+
+.contacts .contact-container .contact-form-block .contact-form ul {
+  list-style: none;
+  width: 100%;
+}
+
+.contacts .contact-container .contact-form-block .contact-form ul li > input, .contacts .contact-container .contact-form-block .contact-form ul li > textarea {
+  width: 100%;
+  padding-left: 2%;
+  box-shadow: 0 0 0 5px rgba(234, 234, 234, 0.32);
+  border: 1px solid rgba(185, 184, 184, 0.5);
+  margin-bottom: 4%;
+  color: #7c7c7c;
+  font-family: "PF Din Comp";
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.contacts .contact-container .contact-form-block .contact-form ul li > textarea {
+  padding-top: 0%;
+  resize: none;
+}
+
+.contacts .contact-container .contact-form-block .contact-form ul .submit {
+  float: right;
+  margin-top: 4%;
+  padding: 2% 10%;
+  border: none;
+  background-color: #59a726;
+  color: #ffffff;
+  font-family: "PF Din Comp";
+  font-size: 1.7em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.contacts .contact-border .contact-border-img {
+  position: absolute;
+  left: 284px;
+  bottom: 134px;
+}
+
+.contacts .contact-border .contacts-border-line {
+  position: absolute;
+  width: 400px;
+  bottom: 138px;
+  right: 0;
+  height: 1px;
+  border-top: 3px solid #59a726;
+}
+
+/* Styles for water tank */
+.tank .tank-spacer {
+  height: 186px;
+}
+
+.tank .page-logo {
+  float: left;
+}
+
+.tank .tank-picture {
+  margin-right: 25%;
+  float: right;
+  display: inline-block;
+  border: 5px solid rgba(1, 2, 3, 0.31);
+  background-color: #ffffff;
+}
+
+.tank .tank-picture img {
+  margin: 25px;
+}
+
+.tank .tank-text {
+  white-space: normal;
+  margin-top: 0px;
+  margin-right: 20%;
+  background-color: #f5f5f5;
+  padding: 3%;
+  color: #282828;
+  font-family: "PF Din Comp";
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.tank .tank-text h3 {
+  font-family: "PF Din Comp";
+  font-weight: 500;
+  margin-bottom: 5%;
+}
+
+.tank .tank-text ul {
+  list-style: none;
+}
+
+.tank .tank-text ul li {
+  color: #282828;
+  margin-left: 5%;
+}
+
+.tank .tank-text ul li::before {
+  content: "•";
+  color: #59a726;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.tank .tanks-border .tanks-border-img {
+  position: absolute;
+  left: 0px;
+  bottom: 134px;
+}
+
+.tank .tanks-border .tanks-border-line {
+  position: absolute;
+  left: 343px;
+  bottom: 138px;
+  right: 0px;
+  height: 1px;
+  border-top: 3px dashed #59a726;
+}
+
+/* Styles for our works */
+.works {
+  width: auto;
+  background: url(../img/works-bg.png) no-repeat left center;
+  white-space: nowrap;
+}
+
+.works .works-container {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.works .works-container .works-title {
+  margin-top: 3%;
+  color: #282828;
+  font-family: "PF Din Comp";
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.works .works-container .works-set {
+  display: inherit;
+  margin-top: 3.5%;
+  white-space: nowrap;
+}
+
+.works .works-container .works-set .works-one {
+  display: inherit;
+  margin: 0 10px;
+  vertical-align: top;
+  width: 358px;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+}
+
+.works .works-container .works-set .works-one .works-one-text {
+  white-space: normal;
+  background-color: #ffffff;
+  border: 10px solid #59a726;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  color: #282828;
+  font-family: "PF Din Comp";
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.works .works-container .works-set .works-one img {
+  width: 100%;
+  border-right: 13px solid #59a726;
+  border-left: 13px solid #59a726;
+}
+
+.works .works-border .works-border-img {
+  position: absolute;
+  left: 0px;
+  bottom: 134px;
+}
+
+.works .works-border .works-border-line {
+  position: absolute;
+  left: 343px;
+  bottom: 0px;
+  right: 649px;
+  height: 140px;
+  border-top: 3px dashed #59a726;
+  border-right: 3px dashed #59a726;
+}
+
+/* Styles for out superiority */
+.superior .superior-block .superior-title {
+  margin-top: 4%;
+  text-transform: uppercase;
+  color: #282828;
+  font-family: "PF Din Comp";
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.superior .superior-block .superior-set {
+  margin-top: 3%;
+}
+
+.superior .superior-block .superior-set .superior-one {
+  float: left;
+  width: 50%;
+  margin-top: 1.5%;
+}
+
+.superior .superior-block .superior-set .superior-one .superior-img {
+  float: left;
+  padding-right: 3%;
+}
+
+.superior .superior-block .superior-set .superior-one .superior-text {
+  white-space: normal;
+  padding-left: 3%;
+  padding-right: 5%;
+  float: none;
+  color: #282828;
+  font-family: "PF Din Comp";
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.superior .superior-border .superior-border-img {
+  position: absolute;
+  left: 570px;
+  top: 51px;
+}
+
+.superior .superior-border .superior-border-line {
+  position: absolute;
+  left: 570px;
+  top: 0;
+  right: 0;
+  height: 141px;
+  border-bottom: 3px dashed #59a726;
+  border-left: 3px dashed #59a726;
+}
+
+/* Styles for testimonials */
+.testimonial {
+  background: url(../img/testimonial-bg.png) no-repeat center center/cover;
+}
+
+.testimonial .testimonial-title {
+  color: #282828;
+  font-family: "PF Din Comp";
+  font-size: 3em;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 4.5%;
+  margin-bottom: 1%;
+}
+
+.testimonial .testimonial-set {
+  display: inline-block;
+}
+
+.testimonial .testimonial-set .testimonial-one {
+  display: inline-block;
+  float: left;
+  width: 50%;
+}
+
+.testimonial .testimonial-set .testimonial-one .testimonial-photo {
+  float: left;
+  margin-right: 2%;
+}
+
+.testimonial .testimonial-set .testimonial-one .testimonial-name {
+  color: #59a726;
+  font-family: "PF Din Comp";
+  font-size: 2em;
+  font-style: italic;
+  vertical-align: bottom;
+}
+
+.testimonial .testimonial-set .testimonial-one .testimonial-text {
+  white-space: normal;
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-top: 4%;
+  padding: 2%;
+  color: #282828;
+  font-family: "PF Din Comp";
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.testimonial .testimonial-set .testimonial-one .arrow-box {
+  position: relative;
+  border: 3px dashed #59a726;
+  border-radius: 10px;
+  position: relative;
+}
+
+.testimonial .testimonial-set .testimonial-one .arrow-box:before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  display: block;
+  width: 0;
+  top: -25px;
+  bottom: auto;
+  left: auto;
+  border-width: 25px 0 0 25px;
+  border-color: transparent #59a726;
+}
+
+.testimonial .testimonial-set .button {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.testimonial .testimonial-set .button button {
+  background: none;
+  border: none;
+}
+
+.testimonial .testimonial-border .testimonial-border-img {
+  position: absolute;
+  left: 477px;
+  top: 104px;
+}
+
+.testimonial .testimonial-border .testimonial-border-line {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 174px;
+  top: 138px;
+  border-top: 3px dashed #59a726;
+  border-right: 3px dashed #59a726;
+}
+
+/* Styles for water certificates */
+.cert {
+  background: url(../img/cert-bg.png) no-repeat center center/cover;
+}
+
+.cert .cert-title {
+  margin-top: 4%;
+  color: #282828;
+  font-family: "PF Din Comp";
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.cert .cert-set {
+  margin-top: 4%;
+  margin-right: 10%;
+  border-top: 1px solid #59a726;
+  border-bottom: 1px solid #59a726;
+}
+
+.cert .cert-set .cert-one {
+  margin: 0;
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+
+.cert .cert-set .cert-one .cert-img {
+  margin-top: 5%;
+}
+
+.cert .cert-set .cert-one .cert-img img {
+  background: #f5f5f5;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 5px solid #888888;
+}
+
+.cert .cert-set .cert-one .cert-text {
+  width: 80%;
+  margin: 4% auto 0;
+  white-space: normal;
+  color: #282828;
+  text-align: center;
+  font-family: "PF Din Comp";
+  font-size: 1.3em;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.cert .cert-set:before {
+  content: "";
+  position: absolute;
+}
+
+.cert .cert-set:after {
+  content: "";
+  position: absolute;
+}
+
+.cert .cert-border .cert-border-img {
+  position: absolute;
+  left: 284px;
+  bottom: 0px;
+}
+
+.cert .cert-border .cert-border-line {
+  position: absolute;
+  left: 171px;
+  top: 0px;
+  right: 0px;
+  bottom: 190px;
+  border-bottom: 3px dashed #59a726;
+  border-left: 3px dashed #59a726;
+}
+
+/* Styles for map and adress */
+.map {
+  padding: 0;
+}
+
+.map .map-view {
+  float: left;
+  width: 60%;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+.map .map-contact {
+  white-space: normal;
+  padding-left: 5%;
+  padding-top: 4%;
+  float: left;
+  width: 40%;
+  height: 100%;
+  background-color: #59a726;
+}
+
+.map .map-contact .map-title {
+  margin-top: 10%;
+  color: #ffffff;
+  font-family: "PF Din Comp";
+  font-size: 2.5em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.map .map-contact .map-text {
+  color: #ffffff;
+  font-family: "PF Din Comp";
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1;
+  padding-bottom: 10%;
+}
+
+.map .map-contact .map-text span {
+  text-transform: uppercase;
+}
+
+.map .map-contact .map-bg-text {
+  position: absolute;
+  top: 20%;
+  margin-left: -5%;
+  opacity: 0.07;
+  color: #ffffff;
+  font-family: "PF Din Comp";
+  font-size: 2200%;
+  font-weight: 700;
+  line-height: 0.7;
+  text-transform: uppercase;
+}
+
+.map .map-border .map-border-line {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 800px;
+  height: 193px;
+  border-top: 3px dashed #59a726;
+  border-right: 3px dashed #59a726;
+}
+
+/* Styles for papers and faq */
+.paper .paper-container {
+  width: 80%;
+}
+
+.paper .paper-container .paper-files {
+  width: 66%;
+  float: left;
+}
+
+.paper .paper-container .paper-files .paper-files-title {
+  margin-top: 4%;
+  color: #282828;
+  font-family: "PF Din Comp";
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.paper .paper-container .paper-files .paper-files-container {
+  margin-top: 4%;
+}
+
+.paper .paper-container .paper-files .paper-files-container .paper-file-one {
+  float: left;
+  margin-right: 4%;
+}
+
+.paper .paper-container .paper-files .paper-files-container .paper-file-one .paper-file-icon {
+  display: inline-block;
+  margin-right: 4%;
+}
+
+.paper .paper-container .paper-files .paper-files-container .paper-file-one .paper-file-desc {
+  white-space: normal;
+  vertical-align: top;
+  display: inline-block;
+  color: #282828;
+  font-size: 1.5em;
+  line-height: 1;
+  font-family: "PF Din Comp";
+}
+
+.paper .paper-container .paper-files .paper-files-container .paper-file-one .paper-file-desc a {
+  color: #3482e3;
+  font-family: "PF Din Comp";
+  font-size: 0.9em;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.paper .paper-container .paper-faq {
+  white-space: normal;
+  width: 33%;
+  float: left;
+}
+
+.paper .paper-container .paper-faq .paper-faq-title {
+  color: #282828;
+  font-family: "PF Din Comp";
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 4%;
+}
+
+.paper .paper-container .paper-faq .paper-faq-set {
+  width: 100%;
+  margin-top: 2%;
+  background-color: #f5f5f5;
+  padding: 4%;
+}
+
+.paper .paper-container .paper-faq .paper-faq-set .paper-faq-one {
+  margin-bottom: 8%;
+  color: #282828;
+  font-family: "PF Din Comp";
+  font-size: 1.2em;
+}
+
+.paper .paper-container .paper-faq .paper-faq-set .paper-faq-one a {
+  color: #3482e3;
+  font-family: "PF Din Comp";
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.paper .paper-container .paper-faq .paper-faq-set .paper-faq-link {
+  margin-bottom: 4%;
+  text-align: center;
+  color: #282828;
+  font-family: "PF Din Comp";
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: underline;
+}
+
+.paper .paper-footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 18%;
+  width: 100%;
+}
+
+.paper .paper-footer .paper-footer-img {
+  width: 100%;
+  background: url(../img/green3.png) repeat-x;
+  background-position: 0 1px;
+}
+
+.paper .paper-footer .paper-footer-img img {
+  display: block;
+}
+
+.paper .paper-footer .paper-footer-links {
+  background-color: #2d6636;
+  height: 100%;
+  padding: 2% 10%;
+}
+
+.paper .paper-footer .paper-footer-links .paper-footer-link-left {
+  float: left;
+}
+
+.paper .paper-footer .paper-footer-links .paper-footer-link-right {
+  float: right;
+}
+
+.paper .paper-footer a {
+  color: #ffffff;
+  font-family: "PF Din Comp";
+  font-size: 1.5em;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.paper .paper-border .paper-border-line {
+  position: absolute;
+  left: 390px;
+  top: 0px;
+  width: 410px;
+  height: 152px;
+  border-bottom: 3px dashed #59a726;
+  border-right: 3px dashed #59a726;
+}
+
+/* Wraps and views for scroll */
+#view1, #view2, #view3, #view4 {
+  white-space: nowrap;
+  height: 100vh;
+}
+
+#wrap1, #wrap2, #wrap3, #wrap4 {
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Map cont */
+#map {
+  min-height: 400px;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 18px;
+  }
+  .main-container .main-intro {
+    display: none;
+  }
+  .main-container .main-right-block {
+    width: 100%;
+  }
+  #view1, #view2, #view3, #view4 {
+    white-space: normal;
+    height: auto;
+  }
+  #wrap1, #wrap2, #wrap3, #wrap4 {
+    overflow: normal;
+    height: auto;
+  }
+  .page {
+    display: block;
+    padding: 5% 2%;
+    margin: 0;
+  }
+  .page-logo {
+    margin-top: 10%;
+  }
+  .border {
+    display: none;
+  }
+  .contacts .contact-container {
+    width: 100%;
+  }
+  .contacts .contact-container .contact-text {
+    width: 100%;
+    float: none;
+    padding-right: 0px;
+    font-size: 1.8em;
+  }
+  .contacts .contact-container .contact-form-block {
+    width: 100%;
+    float: none;
+  }
+  .contacts .contact-container .contact-form-block .contact-form ul .submit {
+    float: none;
+  }
+  .tank .page-logo {
+    float: none;
+    margin-bottom: 3%;
+  }
+  .tank .tank-container {
+    margin: 0 2%;
+  }
+  .tank .tank-container .tank-picture, .tank .tank-container .tank-spacer {
+    display: none;
+  }
+  .tank .tank-container .tank-text {
+    margin: 0;
+    padding: 2%;
+  }
+  .tank .tank-container .tank-text ul li:before {
+    margin-left: 0;
+  }
+  .works .works-container .works-title {
+    margin: 0;
+    padding: 1%;
+  }
+  .works .works-container .works-set {
+    margin-top: 0;
+  }
+  .superior .superior-block .superior-set .superior-one {
+    width: 100%;
+    float: none;
+    display: block;
+    padding: 2%;
+  }
+  .superior .superior-block .superior-set .superior-one .superior-img {
+    padding: 2%;
+  }
+  .superior .superior-block .superior-set .superior-one:after {
+    display: block;
+    content: " ";
+    clear: both;
+  }
+  .testimonial .testimonial-set .testimonial-one {
+    width: 100%;
+    padding-top: 5%;
+    margin-bottom: 10%;
+  }
+  .cert .cert-set {
+    width: 100%;
+  }
+  .cert .cert-set .cert-one {
+    width: 100%;
+    float: none;
+  }
+  .cert .cert-set .cert-one .cert-img {
+    background: none;
+  }
+  .map {
+    padding: 0;
+    margin: 0;
+  }
+  .map .map-view {
+    float: none;
+    width: 100%;
+  }
+  .map .map-contact {
+    float: left;
+    width: 100%;
+  }
+  .paper .paper-container {
+    width: 100%;
+  }
+  .paper .paper-container .paper-files {
+    width: 100%;
+  }
+  .paper .paper-container .paper-faq {
+    width: 100%;
+  }
+  .paper .paper-container .paper-faq .paper-faq-title {
+    text-align: center;
+  }
+  .paper .paper-footer {
+    display: none;
+  }
+}

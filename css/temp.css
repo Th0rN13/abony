@@ -1,0 +1,32 @@
+/* Temp scss for edit, later move to style */
+/*
+	Theme Name: Abony
+	Author: Th0r
+	Author URI: http://webm.pro
+	Description: Theme for sliding pages ural-helyx.ru
+	License: MIT
+*/
+/*
+
+	Some Variables for edit
+
+*/
+#scalewrap, #scaleview {
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1439px) {
+  body {
+    font-size: 16px;
+  }
+  .contacts .contact-container {
+    width: 100%;
+  }
+}
