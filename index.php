@@ -18,8 +18,8 @@ get_header();
 		<div id="view1">
 			<!-- placeholder to view screen -->			
 			<section class="page contacts">
-				<div class="page-logo">
-					<a href="index.html"><img src="img/logo.svg" alt="Logo"></a>
+				<div class="page-logo">					
+					<a href="index.html"><img src="<?php echo get_template_directory_uri();?>/img/logo.svg" alt="Logo"></a>
 				</div>
 				<div class="contact-container">
 					<div class="contact-text">
@@ -52,7 +52,7 @@ get_header();
 				</div>
 				<div class="contact-border border">
 					<div class="contact-border-img">
-						<img src="img/border1.png" alt="Border">				
+						<img src="<?php echo get_template_directory_uri();?>/img/border1.png" alt="Border">				
 					</div>
 					<div class="contacts-border-line"></div>
 				</div>
@@ -61,10 +61,10 @@ get_header();
  			--><section class="page tank">
 				<div class="tank-container">
 					<div class="page-logo">
-						<a href="index.html"><img src="img/logo.svg" alt="Logo"></a>
+						<a href="index.html"><img src="<?php echo get_template_directory_uri();?>/img/logo.svg" alt="Logo"></a>
 					</div>			
 					<div class="tank-picture">
-						<img src="img/water-tank.png" alt="Tank">
+						<img src="<?php echo get_template_directory_uri();?>/img/water-tank.png" alt="Tank">
 					</div>			
 					<div class="tank-spacer"></div>
 					<div class="tank-text">
@@ -84,7 +84,7 @@ get_header();
 				</div>
 				<div class="tanks-border border">
 					<div class="tanks-border-img">
-						<img src="img/border2.png" alt="">
+						<img src="<?php echo get_template_directory_uri();?>/img/border2.png" alt="">
 					</div>
 					<div class="tanks-border-line"></div>
 				</div>
@@ -92,7 +92,7 @@ get_header();
 
 			--><section class="page works">
 				<div class="page-logo">
-					<a href="index.html"><img src="img/logo.svg" alt="Logo"></a>
+					<a href="index.html"><img src="<?php echo get_template_directory_uri();?>/img/logo.svg" alt="Logo"></a>
 				</div>
 				<div class="works-container">
 					<div class="works-title">
@@ -103,37 +103,37 @@ get_header();
 							<div class="works-one-text">
 								Новоуфимская РЭС
 							</div>
-							<img src="img/works1.png" alt="">
+							<img src="<?php echo get_template_directory_uri();?>/img/works1.png" alt="">
 						</div>
 						<div class="works-one">
 							<div class="works-one-text">
 								ТРЦ Ультра Сити Молл
 							</div>
-							<img src="img/works2.png" alt="">
+							<img src="<?php echo get_template_directory_uri();?>/img/works2.png" alt="">
 						</div>
 						<div class="works-one">
 							<div class="works-one-text">
 								Системы оборотных контуров УМПО
 							</div>
-							<img src="img/works3.png" alt="">
+							<img src="<?php echo get_template_directory_uri();?>/img/works3.png" alt="">
 						</div>
 						<div class="works-one">
 							<div class="works-one-text">
 								Управление аварийно-восстановительных работ ПАО Газпром
 							</div>
-							<img src="img/works4.png" alt="">
+							<img src="<?php echo get_template_directory_uri();?>/img/works4.png" alt="">
 						</div>
 						<div class="works-one">
 							<div class="works-one-text">
 								Башспирт системы водоотведения ливневых и пром.стоков
 							</div>
-							<img src="img/works5.png" alt="">
+							<img src="<?php echo get_template_directory_uri();?>/img/works5.png" alt="">
 						</div>										
 					</div>
 				</div>
 				<div class="works-border border">
 					<div class="works-border-img">
-						<img src="img/border2.png" alt="">
+						<img src="<?php echo get_template_directory_uri();?>/img/border2.png" alt="">
 					</div>
 					<div class="works-border-line"></div>
 				</div>
@@ -149,7 +149,7 @@ get_header();
 		<div id="view2">
 			<section class="page superior">
 				<div class="page-logo">
-					<a href="index.html"><img src="img/logo.svg" alt="Logo"></a>
+					<a href="index.html"><img src="<?php echo get_template_directory_uri();?>/img/logo.svg" alt="Logo"></a>
 				</div>
 				<div class="superior-block">
 					<div class="superior-title">Преимущества</div>
@@ -157,7 +157,7 @@ get_header();
 						<div class="clearfix">
 							<div class="superior-one">
 								<div class="superior-img">
-									<img src="img/super1.png" alt="">
+									<img src="<?php echo get_template_directory_uri();?>/img/super1.png" alt="">
 								</div>
 								<div class="superior-text">
 									Мы являемся производителем, вы не переплачиваете за услуги посредника
@@ -165,7 +165,7 @@ get_header();
 							</div>
 							<div class="superior-one">
 								<div class="superior-img">
-									<img src="img/super6.png" alt="">
+									<img src="<?php echo get_template_directory_uri();?>/img/super6.png" alt="">
 								</div>
 								<div class="superior-text">
 									Производим оборудования систем отопления, налажено с 1993 года, качество продукции позволяет осуществлять поставки в Европу
@@ -175,7 +175,7 @@ get_header();
 						<div class="clearfix">
 							<div class="superior-one">
 								<div class="superior-img">
-									<img src="img/super2.png" alt="">
+									<img src="<?php echo get_template_directory_uri();?>/img/super2.png" alt="">
 								</div>
 								<div class="superior-text">
 									Выполняем все работы под ключ, от проектирования до перерезания ленточки и сдачи объекта
@@ -183,7 +183,7 @@ get_header();
 							</div>
 							<div class="superior-one">
 								<div class="superior-img">
-									<img src="img/super7.png" alt="">
+									<img src="<?php echo get_template_directory_uri();?>/img/super7.png" alt="">
 								</div>
 								<div class="superior-text">
 									Мы являемся отечественными производителями, производство сертифицировано и подтверждено высшим международным стандартом качества ISO 9001
@@ -193,7 +193,7 @@ get_header();
 						<div class="clearfix">
 							<div class="superior-one">
 								<div class="superior-img">
-									<img src="img/super3.png" alt="">
+									<img src="<?php echo get_template_directory_uri();?>/img/super3.png" alt="">
 								</div>
 								<div class="superior-text">
 									Производство оборудования водоснабжения и канализации осуществляется уже <b>12</b> лет
@@ -201,7 +201,7 @@ get_header();
 							</div>
 							<div class="superior-one">
 								<div class="superior-img">
-									<img src="img/super8.png" alt="">
+									<img src="<?php echo get_template_directory_uri();?>/img/super8.png" alt="">
 								</div>
 								<div class="superior-text">
 									Мы осуществляем полную техническую поддержку на всей стадии ведения строительства объекта: начиная с проектирования, расчетов, подбора оборудования, заканчивая его запуском и сдачей
@@ -213,7 +213,7 @@ get_header();
 						<div class="clearfix">									
 							<div class="superior-one">
 								<div class="superior-img">
-									<img src="img/super4.png" alt="">
+									<img src="<?php echo get_template_directory_uri();?>/img/super4.png" alt="">
 								</div>
 								<div class="superior-text">
 									Завод площадью более <b>20 000</b> кв.м, передовое японское оборудование
@@ -221,7 +221,7 @@ get_header();
 							</div>
 							<div class="superior-one clearfix">
 								<div class="superior-img">
-									<img src="img/super9.png" alt="">
+									<img src="<?php echo get_template_directory_uri();?>/img/super9.png" alt="">
 								</div>
 								<div class="superior-text">
 									Расширенная гарантия на безотказность оборудования и сервис
@@ -231,7 +231,7 @@ get_header();
 						<div class="clearfix">
 							<div class="superior-one">
 								<div class="superior-img">
-									<img src="img/super5.png" alt="">
+									<img src="<?php echo get_template_directory_uri();?>/img/super5.png" alt="">
 								</div>
 								<div class="superior-text">
 									Перекрестная непрерывная роботизированная машинная намотка, выпускаем более <b>1500</b> изделий в год
@@ -239,7 +239,7 @@ get_header();
 							</div>
 							<div class="superior-one clearfix">
 								<div class="superior-img">
-									<img src="img/super10.png" alt="">
+									<img src="<?php echo get_template_directory_uri();?>/img/super10.png" alt="">
 								</div>
 								<div class="superior-text">
 									Оперативное и качественное решение вопросов водоснабжения, водоотведения, отопления
@@ -250,7 +250,7 @@ get_header();
 				</div>
 				<div class="superior-border border">
 					<div class="superior-border-img">
-						<img src="img/border2.png" alt="">
+						<img src="<?php echo get_template_directory_uri();?>/img/border2.png" alt="">
 					</div>
 					<div class="superior-border-line"></div>
 				</div>
@@ -258,13 +258,13 @@ get_header();
 
 			--><section class="page testimonial">
 				<div class="page-logo">
-					<a href="index.html"><img src="img/logo.svg" alt="Logo"></a>
+					<a href="index.html"><img src="<?php echo get_template_directory_uri();?>/img/logo.svg" alt="Logo"></a>
 				</div>
 				<div class="testimonial-title">Отзывы</div>
 				<div class="testimonial-set">					
 					<div class="testimonial-one">
 						<div class="testimonial-photo">
-							<img src="img/testimonial-photo1.png" alt="">
+							<img src="<?php echo get_template_directory_uri();?>/img/testimonial-photo1.png" alt="">
 						</div>
 						<div class="testimonial-name">
 							Руслан Васильевич, ООО «Арианские сыры»
@@ -275,7 +275,7 @@ get_header();
 					</div>			
 					<div class="testimonial-one">
 						<div class="testimonial-photo">
-							<img src="img/testimonial-photo3.png" alt="">
+							<img src="<?php echo get_template_directory_uri();?>/img/testimonial-photo3.png" alt="">
 						</div>
 						<div class="testimonial-name">
 							Йозеф Асхатович, ООО “Массболл”
@@ -286,7 +286,7 @@ get_header();
 					</div>
 					<div class="testimonial-one">
 						<div class="testimonial-photo">
-							<img src="img/testimonial-photo2.png" alt="">
+							<img src="<?php echo get_template_directory_uri();?>/img/testimonial-photo2.png" alt="">
 						</div>
 						<div class="testimonial-name">
 							Егор Григорьевич, ЗАО «Фенитцер»
@@ -296,13 +296,13 @@ get_header();
 						</div>
 					</div>
 					<div class="testimonial-one button">
-						<button><img src="img/testimonial-btn.png" alt=""></button>
+						<button><img src="<?php echo get_template_directory_uri();?>/img/testimonial-btn.png" alt=""></button>
 					</div>
 				</div>
 
 				<div class="testimonial-border border">
 					<div class="testimonial-border-img">
-						<img src="img/green.png" alt="">
+						<img src="<?php echo get_template_directory_uri();?>/img/green.png" alt="">
 					</div>
 					<div class="testimonial-border-line"></div>
 				</div>		
@@ -314,13 +314,13 @@ get_header();
 		<div id="view3">
 			<section class="page cert">
 				<div class="page-logo">
-					<a href="index.html"><img src="img/logo.svg" alt="Logo"></a>
+					<a href="index.html"><img src="<?php echo get_template_directory_uri();?>/img/logo.svg" alt="Logo"></a>
 				</div>
 				<div class="cert-title">Сертификаты</div>
 				<div class="cert-set">
 					<div class="cert-one">
 						<div class="cert-img">
-							<img src="img/cert1.png" alt="">
+							<img src="<?php echo get_template_directory_uri();?>/img/cert1.png" alt="">
 						</div>
 						<div class="cert-text">
 							Декларация о соответствии емкости для пищевых продуктов
@@ -328,7 +328,7 @@ get_header();
 					</div>
 					<div class="cert-one">
 						<div class="cert-img">
-							<img src="img/cert2.png" alt="">
+							<img src="<?php echo get_template_directory_uri();?>/img/cert2.png" alt="">
 						</div>
 						<div class="cert-text">
 							Декларация соответствия ЛОС
@@ -336,7 +336,7 @@ get_header();
 					</div>
 					<div class="cert-one">
 						<div class="cert-img">
-							<img src="img/cert3.png" alt="">
+							<img src="<?php echo get_template_directory_uri();?>/img/cert3.png" alt="">
 						</div>
 						<div class="cert-text">
 							Декларация о соответствии емкости для пищевых продуктов
@@ -344,7 +344,7 @@ get_header();
 					</div>
 					<div class="cert-one">
 						<div class="cert-img">
-							<img src="img/cert4.png" alt="">
+							<img src="<?php echo get_template_directory_uri();?>/img/cert4.png" alt="">
 						</div>
 						<div class="cert-text">
 							Декларация соответствия ЛОС
@@ -354,7 +354,7 @@ get_header();
 				</div>		
 				<div class="cert-border border">
 					<div class="cert-border-img">
-						<img src="img/green2.png" alt="">
+						<img src="<?php echo get_template_directory_uri();?>/img/green2.png" alt="">
 					</div>
 					<div class="cert-border-line"></div>
 				</div>		
@@ -367,7 +367,7 @@ get_header();
 				</div>
 				<div class="map-contact">
 					<div class="page-logo">
-						<a href="index.html"><img src="img/white-logo.svg" alt="Logo"></a>
+						<a href="index.html"><img src="<?php echo get_template_directory_uri();?>/img/white-logo.svg" alt="Logo"></a>
 					</div>
 					<div class="map-title">география клиентов</div>
 					<div class="map-text">Helyx-ural<br>
@@ -396,7 +396,7 @@ get_header();
 		<div id="view4">
 			<section class="page paper">
 				<div class="page-logo">
-					<a href="index.html"><img src="img/logo.svg" alt="Logo"></a>
+					<a href="index.html"><img src="<?php echo get_template_directory_uri();?>/img/logo.svg" alt="Logo"></a>
 				</div>
 				<div class="paper-container">
 					<div class="paper-files">
@@ -406,7 +406,7 @@ get_header();
 						<div class="paper-files-container">
 							<div class="paper-file-one">
 								<div class="paper-file-icon">
-									<img src="img/icon-doc.png" alt="">
+									<img src="<?php echo get_template_directory_uri();?>/img/icon-doc.png" alt="">
 								</div>
 								<div class="paper-file-desc">
 									Ливневые очистные сооружения<br>
@@ -415,7 +415,7 @@ get_header();
 							</div>
 							<div class="paper-file-one">
 								<div class="paper-file-icon">
-									<img src="img/icon-doc.png" alt="">
+									<img src="<?php echo get_template_directory_uri();?>/img/icon-doc.png" alt="">
 								</div>
 								<div class="paper-file-desc">
 									Ливневые очистные сооружения<br>
@@ -424,7 +424,7 @@ get_header();
 							</div>
 							<div class="paper-file-one">
 								<div class="paper-file-icon">
-									<img src="img/icon-doc.png" alt="">
+									<img src="<?php echo get_template_directory_uri();?>/img/icon-doc.png" alt="">
 								</div>
 								<div class="paper-file-desc">
 									Ливневые очистные сооружения<br>
@@ -433,7 +433,7 @@ get_header();
 							</div>
 							<div class="paper-file-one">
 								<div class="paper-file-icon">
-									<img src="img/icon-doc.png" alt="">
+									<img src="<?php echo get_template_directory_uri();?>/img/icon-doc.png" alt="">
 								</div>
 								<div class="paper-file-desc">
 									Ливневые очистные сооружения<br>
@@ -459,7 +459,7 @@ get_header();
 				</div>
 				<div class="paper-footer">
 					<div class="paper-footer-img">
-						<img src="img/green3.png" alt="">
+						<img src="<?php echo get_template_directory_uri();?>/img/green3.png" alt="">
 					</div>
 					<div class="paper-footer-links">
 						<div class="paper-footer-link-left">
