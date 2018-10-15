@@ -72,7 +72,7 @@ get_header();
 					</div>			
 					<div class="tank-spacer"></div>
 					<div class="tank-text">
-						<h3>ВОДОСНАБЖЕНИЕ И КАНАЛИЗАЦИЯ</h3>
+						<h3><?php the_title(); ?></h3>
 						<ul>
 							<li>ёмкости и резервуары</li>
 							<li>ливневые очистные сооружения</li>

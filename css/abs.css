@@ -11,15 +11,6 @@
 	Some Variables for edit
 
 */
-#view1, #view2, #view3, #view4 {
-  height: 100vh;
-  white-space: nowrap;
-}
-
-#wrap1, #wrap2, #wrap3, #wrap4 {
-  height: 100vh;
-}
-
 /* Check if */
 @media (min-width: 768px) {
   .page {
@@ -111,6 +102,16 @@ a {
 
 h3 {
   font-size: 1em;
+  text-transform: uppercase;
+}
+
+#view1, #view2, #view3, #view4 {
+  height: 100vh;
+  white-space: nowrap;
+}
+
+#wrap1, #wrap2, #wrap3, #wrap4 {
+  height: 100vh;
 }
 
 /* Homepage styles */

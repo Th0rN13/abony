@@ -11,25 +11,10 @@
 	Some Variables for edit
 
 */
-#view1, #view2, #view3, #view4 {
-  height: 100vh;
-  white-space: nowrap;
-}
-
-#wrap1, #wrap2, #wrap3, #wrap4 {
-  height: 100vh;
-}
-
 /* Check if */
 /* Wraps and views for scroll */
-#view1, #view2, #view3, #view4 {
-  white-space: nowrap;
-  height: 100vh;
-}
-
 #wrap1, #wrap2, #wrap3, #wrap4 {
   overflow: hidden;
-  height: 100vh;
   width: 100%;
 }
 
@@ -117,6 +102,16 @@ a {
 
 h3 {
   font-size: 1em;
+  text-transform: uppercase;
+}
+
+#view1, #view2, #view3, #view4 {
+  height: 100vh;
+  white-space: nowrap;
+}
+
+#wrap1, #wrap2, #wrap3, #wrap4 {
+  height: 100vh;
 }
 
 /* Homepage styles */
