@@ -14,6 +14,8 @@
 
 get_header();
 ?>
+
+	<?php the_post(); ?>
 	<div id="wrap1">
 		<div id="view1">
 			<!-- placeholder to view screen -->			
@@ -27,7 +29,7 @@ get_header();
 						<h3>Отослать письмо</h3>
 					</div>
 					<div class="contact-text">
-						Заказывайте услуги по наладке водоснабжения и канализации у компании <span>Ural-Helyx</span>
+						<?php echo get_field('contact-text'); ?>
 					</div><!--
 					--><div class="contact-form-block">
 						<form action="send" class="contact-form" method="post" name="contact_form">
@@ -72,18 +74,8 @@ get_header();
 					</div>			
 					<div class="tank-spacer"></div>
 					<div class="tank-text">
-						<h3><?php the_title(); ?></h3>
-						<ul>
-							<li>ёмкости и резервуары</li>
-							<li>ливневые очистные сооружения</li>
-							<li>насосные станции (канализационные насосные станции, станции повышения давления, станции пожаротушения)</li>
-							<li>нестандартное оборудование (дефлекторы, гальванические ванные)</li>
-							<li>хозяйственно-бытовые стоки</li>
-							<li>производственные и промышленные стоки</li>
-							<li>ёмкости спецназначения</li>
-							<li>трубы и трубопроводы</li>
-							<li>колодцы</li>
-						</ul>
+						<h3><?php the_title(); ?></h3>						
+						<?php echo get_the_content(); ?>
 					</div>			
 				</div>
 				<div class="tanks-border border">
@@ -372,8 +364,10 @@ get_header();
 					<div class="map-title"><h3>география клиентов</h3></div>
 					<div class="map-text">Helyx-ural<br>
 						Адрес:<br>
-						Екатеринбург +7 (343) 346 33 30<br>
-						Уфа +7 (347) 298 32 42<br>
+						<?php echo get_option('city1');?>
+						<?php echo get_option('phone1');?><br>
+						<?php echo get_option('city2');?>
+						<?php echo get_option('phone2');?><br>						
 						<br>
 						Телефон: 8 000 540-57-59<br>
 						<br>
