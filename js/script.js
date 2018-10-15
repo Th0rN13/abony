@@ -1,11 +1,14 @@
-jQuery(function () { 
+function StartScrollMagic() {
 
-    var $workswidth = jQuery(".works").width();
+    var $workswidth = jQuery(".works").outerWidth();
     var $screenwidth = jQuery(window).width();
     
-    var $pagewidth = jQuery(".contacts").width();
-    var $scroll1width = $screenwidth*2+($workswidth-$pagewidth)+681;
-    //var $scroll1width = $pagewidth*2+$workswidth-370;//5556
+    var $pagewidth = jQuery(".contacts").outerWidth();
+    var $scroll1width = $screenwidth*3+($workswidth-$pagewidth)-300-23;
+
+    var $paperline = $screenwidth*0.07+120;
+    jQuery(".paper-border-line").css({height:($paperline)});
+    
 
     console.log($workswidth);
     console.log($screenwidth);
@@ -22,7 +25,7 @@ jQuery(function () {
         new ScrollMagic.Scene({
                 triggerElement: "#wrap1",
                 triggerHook: "onLeave",
-                duration: "500%"
+                duration: "300%"
             })
             .setPin("#wrap1")
             .setTween(scroll1)
@@ -32,7 +35,7 @@ jQuery(function () {
         new ScrollMagic.Scene({
                 triggerElement: "#wrap2",
                 triggerHook: "onLeave",
-                duration: "500%"
+                duration: "100%"
             })
             .setPin("#wrap2")
             .setTween(scroll2)
@@ -42,7 +45,7 @@ jQuery(function () {
         new ScrollMagic.Scene({
                 triggerElement: "#wrap3",
                 triggerHook: "onLeave",
-                duration: "500%"
+                duration: "100%"
             })
             .setPin("#wrap3")
             .setTween(scroll3)
@@ -51,7 +54,15 @@ jQuery(function () {
             
         }
 
-    
+}
+
+jQuery(window).resize(function() {
+    location.reload();
+    StartScrollMagic();
+} ); 
+
+jQuery(function () {
+    StartScrollMagic();
 });
 
 /*

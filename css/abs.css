@@ -21,16 +21,10 @@
 }
 
 /* Check if */
-/* Wraps and views for scroll */
-#view1, #view2, #view3, #view4 {
-  white-space: nowrap;
-  height: 100vh;
-}
-
-#wrap1, #wrap2, #wrap3, #wrap4 {
-  overflow: hidden;
-  height: 100vh;
-  width: 100%;
+@media (min-width: 768px) {
+  .page {
+    position: absolute;
+  }
 }
 
 /* Fonts */
