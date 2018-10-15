@@ -95,7 +95,7 @@ a {
   min-height: 100px;
 }
 
-/* For test purpose */
+/* For hidden h3 purpose */
 .hidden {
   display: none !important;
 }
@@ -586,10 +586,13 @@ h3 {
 }
 
 .cert .cert-set {
-  margin-top: 4%;
-  margin-right: 10%;
+  position: absolute;
+  margin-top: 2%;
+  z-index: 5;
   border-top: 1px solid #59a726;
   border-bottom: 1px solid #59a726;
+  overflow-y: scroll;
+  height: 450px;
 }
 
 .cert .cert-set .cert-one {
@@ -597,6 +600,7 @@ h3 {
   float: left;
   width: 25%;
   text-align: center;
+  height: 100%;
 }
 
 .cert .cert-set .cert-one .cert-img {
@@ -681,6 +685,8 @@ h3 {
 }
 
 .map .map-contact .map-text {
+  position: absolute;
+  z-index: 5;
   color: #ffffff;
   font-family: "PF Din Comp";
   font-size: 2em;
@@ -693,8 +699,13 @@ h3 {
   text-transform: uppercase;
 }
 
+.map .map-contact .map-text a {
+  color: #ffffff;
+}
+
 .map .map-contact .map-bg-text {
   position: absolute;
+  z-index: 0;
   top: 20%;
   margin-left: -5%;
   opacity: 0.07;
@@ -704,6 +715,7 @@ h3 {
   font-weight: 700;
   line-height: 0.7;
   text-transform: uppercase;
+  user-select: none;
 }
 
 .map .map-border .map-border-line {

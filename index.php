@@ -95,41 +95,24 @@ get_header();
 				</div>	
 				<div class="works-container">					
 					<div class="works-set">
-						<div class="works-one">
-							<div class="works-one-text">
-								<span>Новоуфимская РЭС</span>
-								<div class="works-one-text-align"></div>
-							</div>
-							<img src="<?php echo get_template_directory_uri();?>/img/works1.png" alt="">
-						</div>
-						<div class="works-one">
-							<div class="works-one-text">
-								<span>ТРЦ Ультра Сити Молл</span>
-								<div class="works-one-text-align"></div>
-							</div>
-							<img src="<?php echo get_template_directory_uri();?>/img/works2.png" alt="">
-						</div>
-						<div class="works-one">
-							<div class="works-one-text">
-								<span>Системы оборотных контуров УМПО</span>
-								<div class="works-one-text-align"></div>
-							</div>
-							<img src="<?php echo get_template_directory_uri();?>/img/works3.png" alt="">
-						</div>
-						<div class="works-one">
-							<div class="works-one-text">
-								<span>Управление аварийно-восстановительных работ ПАО Газпром</span>
-								<div class="works-one-text-align"></div>
-							</div>
-							<img src="<?php echo get_template_directory_uri();?>/img/works4.png" alt="">
-						</div>
-						<div class="works-one">
-							<div class="works-one-text">
-								<span>Башспирт системы водоотведения ливневых и пром.стоков</span>
-								<div class="works-one-text-align"></div>
-							</div>
-							<img src="<?php echo get_template_directory_uri();?>/img/works5.png" alt="">
-						</div>										
+
+					<?php $temppost = get_posts ( array (
+						'category_name' => 'vypolnennye-raboty',
+						'showposts' => 10,
+						'order' => 'asc'));
+						if ($temppost) : 						
+							foreach ($temppost as $post) : setup_postdata ($post); ?>	
+								<div class="works-one">
+									<div class="works-one-text">
+										<span><?php the_title();?></span>
+										<div class="works-one-text-align"></div>
+									</div>								
+									<?php echo the_post_thumbnail();?>
+								</div>
+						<?php 
+							endforeach;
+							wp_reset_postdata();
+						endif; ?>
 					</div>
 				</div>
 				<div class="works-border border">
@@ -304,43 +287,34 @@ get_header();
 	<div id="wrap3">
 		<div id="view3">
 			<section class="page cert">
-				<div class="page-logo">
+				<div class="page-logo">					
 					<a href="/"><img src="<?php echo get_template_directory_uri();?>/img/logo.svg" alt="Logo"></a>
 				</div>
 				<div class="cert-title title clearfix"><h3>Сертификаты</h3></div>
 				<div class="cert-set">
-					<div class="cert-one">
-						<div class="cert-img">
-							<img src="<?php echo get_template_directory_uri();?>/img/cert1.png" alt="">
-						</div>
-						<div class="cert-text">
-							Декларация о соответствии емкости для пищевых продуктов
-						</div>
-					</div>
-					<div class="cert-one">
-						<div class="cert-img">
-							<img src="<?php echo get_template_directory_uri();?>/img/cert2.png" alt="">
-						</div>
-						<div class="cert-text">
-							Декларация соответствия ЛОС
-						</div>
-					</div>
-					<div class="cert-one">
-						<div class="cert-img">
-							<img src="<?php echo get_template_directory_uri();?>/img/cert3.png" alt="">
-						</div>
-						<div class="cert-text">
-							Декларация о соответствии емкости для пищевых продуктов
-						</div>
-					</div>
-					<div class="cert-one">
-						<div class="cert-img">
-							<img src="<?php echo get_template_directory_uri();?>/img/cert4.png" alt="">
-						</div>
-						<div class="cert-text">
-							Декларация соответствия ЛОС
-						</div>
-					</div>
+					<?php //http://helyx.loc/wp-admin/edit.php?category_name=sertifikaty?>
+
+					<?php $temppost = get_posts ( array (
+						'category_name' => 'sertifikaty',
+						'showposts' => 10,
+						'order' => 'asc'));
+						$i=0;
+						if ($temppost) :
+							foreach ($temppost as $post) : setup_postdata ($post); $i++; ?>
+								<div class="cert-one">
+									<div class="cert-img">
+										<?php echo the_post_thumbnail();?>
+									</div>
+									<div class="cert-text">
+										<?php the_title();?>
+									</div>
+								</div>
+						<?php 
+								if($i % 4 === 0) echo '<div class="clearfix"></div>';
+							endforeach;
+							wp_reset_postdata();
+						endif; ?>
+
 					<div class="clearfix"></div>
 				</div>		
 				<div class="cert-border border">
@@ -364,14 +338,30 @@ get_header();
 					<div class="map-title"><h3>география клиентов</h3></div>
 					<div class="map-text">Helyx-ural<br>
 						Адрес:<br>
-						<?php echo get_option('city1');?>
-						<?php echo get_option('phone1');?><br>
-						<?php echo get_option('city2');?>
-						<?php echo get_option('phone2');?><br>						
+						<?php echo get_option('city1');?>:
+						<a href="tel:<?php
+							$temp = get_option('phone1');
+							echo preg_replace('/[^0-9]/', '', $temp);?>
+						"><?php echo $temp;?>
+						</a><br>
+						<?php echo get_option('city2');?>:
+						<a href="tel:<?php
+							$temp = get_option('phone2');
+							echo preg_replace('/[^0-9]/', '', $temp);?>
+						"><?php echo $temp;?>
+						</a><br>
 						<br>
-						Телефон: 8 000 540-57-59<br>
+						Телефон: <a href="tel:<?php
+							$temp = get_option('phone-common');
+							echo preg_replace('/[^0-9]/', '', $temp);?>
+						"><?php echo $temp;?>
+						</a><br>
 						<br>
-						E-mail: ural-helyx@mail.ru
+						E-mail: <a href="mailto:<?php
+							$temp = get_option('email');
+							echo $temp;?>
+						"><?php echo $temp;?>
+						</a>
 					</div>
 					<div class="map-bg-text">
 						Кон<br>
@@ -400,15 +390,26 @@ get_header();
 					Опросные листы для заказа продукции и услуг
 				</div>
 				<div class="paper-files-container">
-					<div class="paper-file-one">
-						<div class="paper-file-icon">
-							<img src="<?php echo get_template_directory_uri();?>/img/icon-doc.png" alt="">
-						</div>
-						<div class="paper-file-desc">
-							Ливневые очистные сооружения<br>
-							<a href="#">Скачать файл .DOCX, 478 Kb</a>
-						</div>
-					</div>
+
+					<?php $temppost = get_posts ( array (
+						'post_type' => 'dlm_download',
+						'showposts' => 100));						
+						if ($temppost) :
+							foreach ($temppost as $post) : setup_postdata ($post);?>
+								<div class="paper-file-one">
+									<div class="paper-file-icon">
+										<img src="<?php echo get_template_directory_uri();?>/img/icon-doc.png" alt="">
+									</div>
+									<div class="paper-file-desc">
+										<?php 
+								        echo $post->post_title.'<br><a href="' . get_bloginfo( 'url' )  . '/download/' . $post->ID . '/" title="title">Скачать файл';?>								    	
+									</div>
+								</div>
+						<?php 								
+							endforeach;
+							wp_reset_postdata();
+						endif; ?>
+
 					<div class="paper-file-one">
 						<div class="paper-file-icon">
 							<img src="<?php echo get_template_directory_uri();?>/img/icon-doc.png" alt="">
@@ -441,14 +442,23 @@ get_header();
 			<div class="paper-faq">
 				<div class="paper-faq-title">вопросы и ответы</div>
 				<div class="paper-faq-set">
-					<div class="paper-faq-one">
-						<b>Как осуществляется подбор оборудования и проработка деталей проекта?</b>	На данном этапе при создании очистного комплекса или другой наружной инженерной сети специалисты компании «БиоПласт» осуществляют подбор необходимого оборудования исходя из технико-экономической целесообразности. При необходимости осуществляется разработка нестандартных решений с последующей их реализацией. <a href="#">Далее</a>
-					</div>
-					<div class="paper-faq-one">
-						<b>Как осуществляется подбор оборудования и проработка деталей проекта?</b> На данном этапе при создании очистного комплекса или другой наружной инженерной сети специалисты компании «БиоПласт» осуществляют подбор необходимого оборудования исходя из технико-экономической целесообразности. При необходимости осуществляется разработка нестандартных решений с последующей их реализацией. <a href="#">Далее</a>
-					</div>
+					<?php $temppost = get_posts ( array (
+						'category_name' => 'voprosy-i-otvety',
+						'showposts' => 2,
+						'order' => 'asc'));						
+						if ($temppost) :
+							foreach ($temppost as $post) : setup_postdata ($post);?>
+								<div class="paper-faq-one">
+									<b><?php the_title();?></b>
+									<?php the_excerpt();?>
+									<a href="<?php the_permalink();?>">Далее</a>
+								</div>
+						<?php 								
+							endforeach;
+							wp_reset_postdata();
+						endif; ?>
 					<div class="paper-faq-link">
-						Все вопросы
+						<a href="<?php echo get_category_link(get_category_by_slug('voprosy-i-otvety'));?>">Все вопросы</a>
 					</div>
 				</div>
 			</div>
