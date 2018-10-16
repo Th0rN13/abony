@@ -32,7 +32,9 @@ get_header();
 						<?php echo get_field('contact-text'); ?>
 					</div><!--
 					--><div class="contact-form-block">
-						<form action="send" class="contact-form" method="post" name="contact_form">
+
+						<?php echo do_shortcode('[contact-form-7 id="82" title="Form1"]');?>
+						<!-- <form action="send" class="contact-form" method="post" name="contact_form">
 							<ul>
 								<li>
 									<input type="text" name="name" placeholder="Ваше Имя" />
@@ -53,7 +55,7 @@ get_header();
 									<button class="submit" type="submit">Отправить</button>
 								</li>
 							</ul>					
-						</form>
+						</form> -->
 					</div>	
 				</div>
 				<div class="contact-border border">
