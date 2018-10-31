@@ -171,3 +171,42 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 require_once ('theme-options.php');
 
 remove_filter('the_excerpt', 'wpautop');
+
+/**
+ * Add automatic image sizes
+ */
+if ( function_exists( 'add_image_size' ) ) { 
+	add_image_size( 'testimonial-photo', 65, 65, false ); 
+	add_image_size( 'works-thumb', 320, 170, false );
+	add_image_size( 'cert-thumb', 200, 280, false ); 	
+}
+
+//fix to allow upload xlsx
+function cancel_real_mime_check( $data, $file, $filename, $mimes ) {	
+	$wp_filetype = wp_check_filetype( $filename, $mimes ); 
+	$ext = $wp_filetype['ext'];
+	$type = $wp_filetype['type'];
+	$proper_filename = $data['proper_filename']; 
+	return compact( 'ext', 'type', 'proper_filename' );
+}
+add_filter('wp_check_filetype_and_ext', 'cancel_real_mime_check',10,4);
+
+//mime icons
+//icons from https://www.iconfinder.com/Sergt
+//https://www.iconfinder.com/iconsets/file-extension-3
+function change_mime_icon($icon, $mime, $post_id){
+	if ( $mime === 'application/pdf' ) {		
+		return get_template_directory_uri().'/img/icons/pdf.png';
+	} else if ( $mime === 'application/msword' )  {
+		return get_template_directory_uri().'/img/icons/doc.png';
+	} else if ( $mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' )  {
+		return get_template_directory_uri().'/img/icons/docx.png';
+	} else if ( $mime === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' )  {
+		return get_template_directory_uri().'/img/icons/xlsx.png';
+	} else if ($mime === 'application/vnd.ms-excel' ) {
+		return get_template_directory_uri().'/img/icons/xls.png';
+	} else {
+		return $icon;
+	}
+}
+add_filter('wp_mime_type_icon', 'change_mime_icon', 10, 3);
