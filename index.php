@@ -81,13 +81,17 @@ get_header();
 						'order' => 'asc'));
 						if ($temppost) : 						
 							foreach ($temppost as $post) : setup_postdata ($post); ?>	
-								<div class="works-one">
-									<div class="works-one-text">
-										<span><?php the_title();?></span>
-										<div class="works-one-text-align"></div>
-									</div>									
-									<img src="<?php echo get_field('work_image')['sizes']['works-thumb']; ?>" alt="<?php the_title();?>">
-								</div>
+								<a href="<?php the_permalink();?>">
+									<div class="works-one">
+										<div class="works-one-text">
+											<span><?php the_title();?></span>
+											<div class="works-one-text-align"></div>
+										</div>
+										<div class="works-one-img">
+											<img src="<?php echo get_field('work_image')['sizes']['works-thumb']; ?>" alt="<?php the_title();?>">
+										</div>
+									</div>
+								</a>
 						<?php 
 							endforeach;
 							wp_reset_postdata();
@@ -202,7 +206,7 @@ get_header();
 					<?php $temppost = get_posts ( array (
 						'post_type' => 'testimonial',
 						'showposts' => 3,
-						'order' => 'asc'));
+						'order' => 'desc'));
 						if ($temppost) : 						
 							foreach ($temppost as $post) : setup_postdata ($post); ?>	
 								--><div class="testimonial-one">

@@ -20,7 +20,7 @@ get_header();
 			<?php $temppost = get_posts ( array (
 				'post_type' => 'testimonial',
 				'showposts' => 1,
-				'order' => 'asc'));
+				'order' => 'desc'));
 				if ($temppost) : 						
 					foreach ($temppost as $post) : setup_postdata ($post); ?>	
 						--><div class="testimonial-one">

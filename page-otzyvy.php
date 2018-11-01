@@ -15,8 +15,8 @@ get_header();
 
 			<?php $temppost = get_posts ( array (
 				'post_type' => 'testimonial',
-				'showposts' => 3,
-				'order' => 'asc'));
+				'showposts' => 100,
+				'order' => 'desc'));
 				if ($temppost) : 						
 					foreach ($temppost as $post) : setup_postdata ($post); ?>	
 						--><div class="testimonial-one">
