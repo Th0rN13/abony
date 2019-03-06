@@ -10,51 +10,33 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<section class="page faq">
+		<div class="page-logo">
+			<a href="<?php echo home_url();?>"><img src="<?php echo get_template_directory_uri();?>/img/logo.svg" alt="Logo"></a>
+		</div>
+		<div class="clearfix"></div>
+		<div class="faq-title"><h3>Ничего не найдено</h3></div>
+		<div class="faq-set">
+			<div class="faq-one-single">						
+				Вы можете перейти на <a href="<?php echo home_url();?>">главную страницу</a>
+			</div>				
+		</div>		
+	</section><!-- page paper-->	
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'abony' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'abony' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'abony' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$abony_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'abony' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$abony_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	<div class="footer-rel">
+		<div class="footer-img">
+			<!-- <img src="img/green3.png" alt=""> -->
+		</div>
+		<div class="footer-links clearfix">
+			<div class="footer-link-left">
+				<a href="index.html">ural-helyx.ru</a>
+			</div>
+			<div class="footer-link-right">
+				<a href="http://2666541.ru" target="_blank">Воплощение идей – <u>Студия Анатолия Тарасенко</u> 2018</a>
+			</div>											
+		</div>					
+	</div>	
 
 <?php
+
 get_footer();

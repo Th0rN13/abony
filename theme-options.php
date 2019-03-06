@@ -70,6 +70,12 @@ class wph_custom_Settings_Page {
 				'type' => 'email',
 				'section' => 'wph_custom_section',
 			),
+			array(
+				'label' => 'Стандартный текст для Выполненных работ',
+				'id' => 'std-line',
+				'type' => 'text',
+				'section' => 'wph_custom_section',
+			),
 		);
 		foreach( $fields as $field ){
 			add_settings_field( $field['id'], $field['label'], array( $this, 'wph_field_callback' ), 'wph_custom', $field['section'], $field );

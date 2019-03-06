@@ -15,14 +15,20 @@ get_header();
 			<a href="<?php echo home_url();?>"><img src="<?php echo get_template_directory_uri();?>/img/logo.svg" alt="Logo"></a>
 		</div>
 		<div class="clearfix"></div>
-		<div class="faq-title"><h3><?php the_title();?></h3></div>
+		<div class="faq-title"><h3><?php $title = get_the_title(); echo $title;?></h3></div>
 		<div class="faq-set">
 			<div class="faq-one-single">			
 				<?php //print_r(get_field('work_image'));?>	
-				<img src="<?php echo get_field('work_image')['url']; ?>" alt="<?php the_title();?>">
-				<?php
+				<img src="<?php echo get_field('work_image')['url']; ?>" alt="<?php echo $title;?>">
+				<p>
+				<?php				
 					the_post();
-				 	the_content();
+					if (empty_content(get_the_content())) {  
+						$temp = get_option('std-line');
+						echo '<p>'.$temp.' '.$title.'</p>';
+					} else {
+						the_content();
+					}
 				 	?>
 			</div>				
 		</div>

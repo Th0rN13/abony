@@ -206,3 +206,7 @@ function change_mime_icon($icon, $mime, $post_id){
 	}
 }
 add_filter('wp_mime_type_icon', 'change_mime_icon', 10, 3);
+
+function empty_content($str) {
+    return trim(str_replace('&nbsp;','',strip_tags($str))) == '';
+}

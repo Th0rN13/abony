@@ -10,46 +10,32 @@
 get_header();
 ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<section class="page faq">
+		<div class="page-logo">
+			<a href="<?php echo home_url();?>"><img src="<?php echo get_template_directory_uri();?>/img/logo.svg" alt="Logo"></a>
+		</div>
+		<div class="clearfix"></div>
+		<div class="faq-title"><h3>Ничего не найдено</h3></div>
+		<div class="faq-set">
+			<div class="faq-one-single">						
+				Вы можете перейти на <a href="<?php echo home_url();?>">главную страницу</a>
+			</div>				
+		</div>		
+	</section><!-- page paper-->	
 
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'abony' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
+	<div class="footer-rel">
+		<div class="footer-img">
+			<!-- <img src="img/green3.png" alt=""> -->
+		</div>
+		<div class="footer-links clearfix">
+			<div class="footer-link-left">
+				<a href="index.html">ural-helyx.ru</a>
+			</div>
+			<div class="footer-link-right">
+				<a href="http://2666541.ru" target="_blank">Воплощение идей – <u>Студия Анатолия Тарасенко</u> 2018</a>
+			</div>											
+		</div>					
+	</div>	
 
 <?php
-get_sidebar();
 get_footer();

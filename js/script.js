@@ -20,6 +20,13 @@ function StartScrollMagic() {
     const timeBeetwen = 1;
     const timeSlBeet = timeSlide + timeBeetwen;
 
+    let $certlines = Math.floor((jQuery('.cert-one').length-1)/4);
+    //if ($certlines === 0) $certlines = 1;
+    certTimeSlide = $certlines * timeSlide / 2;
+    let $certheight = jQuery('.cert-one').outerHeight();    
+    
+    console.log($scrollwidth, $workswidth, $screenwidth);
+
     if ($screenwidth >= 768) {        
         let scroll = new TimelineMax()
             //contact
@@ -34,7 +41,7 @@ function StartScrollMagic() {
             .add(TweenMax.to("#view1", timeSlide,   {x: -$scrollwidth, ease: Power3.easeInOut}))
             .add(TweenMax.to("#border-img", timeSlide,   {x: +$scrollwidth+290, width: 343, ease: Power3.easeInOut}), timeSlBeet*2) //cropwidth
             .add(TweenMax.to("#border-img img", timeSlide,   {left: -1054, ease: Power3.easeInOut}), timeSlBeet*2) //width diff, shift to right
-            .add(TweenMax.to("#works-bg", timeSlide,   {x: +$workswidth-323, ease: Power3.easeInOut}), timeSlBeet*2) //fix bg
+            .add(TweenMax.to("#works-bg", timeSlide,   {x: +$scrollwidth-$screenwidth*2, ease: Power3.easeInOut}), timeSlBeet*2) //fix bg
             .add(TweenMax.to("#view1", timeBeetwen,   {ease: Power3.easeInOut}))
             //superior
             .add(TweenMax.to("#view1", timeSlide,   {y: -$screenheight, ease: Power3.easeInOut}))
@@ -45,7 +52,9 @@ function StartScrollMagic() {
             .add(TweenMax.to("#view1", timeBeetwen,   {ease: Power3.easeInOut}))
             //cert
             .add(TweenMax.to("#view1", timeSlide,   {y: -$screenheight*2, ease: Power3.easeInOut}))
+            .add(TweenMax.to(".cert-one", certTimeSlide,   {y: -$certlines*$certheight, ease: Power3.easeInOut}))            
             .add(TweenMax.to("#view1", timeBeetwen,   {ease: Power3.easeInOut}))
+
             //map
             .add(TweenMax.to("#view1", timeSlide,   {x: -$scrollwidth-$screenwidth*2, ease: Power3.easeInOut}))
             .add(TweenMax.to("#view1", timeBeetwen,   {ease: Power3.easeInOut}))
@@ -71,9 +80,13 @@ function CalcCoord() {
     $workswidth = jQuery(".works").outerWidth();
     $screenwidth = jQuery(window).width();
     $screenheight = jQuery(window).height();
-    $scrollwidth = $screenwidth*3+($workswidth-$screenwidth)-300-23;
+    //$scrollwidth = $screenwidth*3+($workswidth-$screenwidth);
+    $scrollwidth = $screenwidth*2+($workswidth-$screenwidth);
+    //-300-23;
     $paperheight = jQuery(".paper").outerHeight();        
     $footerheight = jQuery(".footer").outerHeight();
+
+    
 
     //if Large Screen, then scroll magic, and setup positions depends on works width
     if ($screenwidth >= 768) {
@@ -90,15 +103,13 @@ function CalcCoord() {
         //padding for large screens (17% left and 7% top)
         $paperborderline = $screenwidth*0.17;
         jQuery(".paper-border-line").css({left:($paperborderline + 120)});
-        jQuery(".paper-border-line").css({width:(681 - $paperborderline)});
-        console.log('if: ', $paperborderline);
+        jQuery(".paper-border-line").css({width:(681 - $paperborderline)});        
         if ($screenheight > 999 ) {
             $paperborderline = $screenwidth*0.07; 
         } else {
             //padding for <1000px 2% top)
             $paperborderline = $screenwidth*0.02; 
-        }
-        console.log('if: ', $paperborderline);       
+        }        
     } else {        
         //padding for small screens (2% left and top)
         $paperborderline = $screenwidth*0.02;

@@ -362,20 +362,24 @@ get_header();
 								'showposts' => 100));						
 								if ($temppost) :
 									foreach ($temppost as $post) : setup_postdata ($post);
-										$childs = get_children(array ('post_parent' => $post->ID));
-										$child = reset($childs);
-										$file_url = wp_get_attachment_url($child->ID);
+										$file = get_field('file');
+										
+										echo "<!--";
+										print_r($file);
+										echo "-->";
+										//$child = reset($childs);
+										$file_url = wp_get_attachment_url($file);
 										$filetype = strtoupper(wp_check_filetype($file_url)['ext']);
 									?><!-- 
 									--><div class="paper-file-one">
 										<div class="paper-file-icon">
-											<img src="<?php echo wp_mime_type_icon($child->ID);?>" alt="">
+											<img src="<?php echo wp_mime_type_icon($file);?>" alt="">
 										</div>
 										<div class="paper-file-desc">
 											<?php the_title();?><br>
 											<a href="<?php echo $file_url?>" target="_blank">
 												<?php echo 'Скачать файл .'.$filetype.', '; ?>
-												<?php echo size_format(filesize( get_attached_file( $child->ID)))?>
+												<?php echo size_format(filesize( get_attached_file($file)))?>
 											</a>
 
 										</div>
